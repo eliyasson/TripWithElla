@@ -5,7 +5,6 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
 }
 
 body, html {
@@ -48,55 +47,50 @@ body, html {
 }
 
 .logo {
-    font-size: 30px;
+    flex: 1;
+    font-size: 40px;
     padding: 20px;
+    margin-left: 50px;
     font-family: Satisfy;
-    color: #FDE02F;
 }
 
 ul.menu {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 90px;
-    left: 0;
-    background-color: #fff;
-    z-index: 1;
-}
-
-.menu.active ul.menu {
+    flex: 1;
     display: flex;
+    flex-flow: row wrap;
 }
 
 .menu li {
+    flex: 1;
     list-style-type: none;
     font-size: 16px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+
 }
 
 .menu li a {
-    text-decoration: none;
-    font-size: 1.35rem;
-    cursor: pointer;
-    background-color: linear-gradient(to right, black 50%, white 0%);
-    background-repeat: repeat;
-    background-position: 100% 0;
-    box-shadow: 0.4rem 0.4rem 0 black;
-    transition: all 0.3s;
-    margin: 20px;
-    font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    
+      text-decoration: none;
+      font-size: 1.35rem;
+      cursor: pointer;
+      background-color:linear-gradient(to right, black 50%, white 0%); 
+      background-repeat: repeat;
+      background-position: 100% 0;
+      box-shadow: 0.4rem 0.4rem 0 black;
+      transition: all 0.3s;
+      margin: 20px;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
 }
 
 .menu li a:hover {
     background-color: #000;
     color: rgb(255, 255, 255);
-    border: none;
-    box-shadow: none;
-    background-position: 0 0;
-    transform: translate(0.4rem, 0.4rem);
+      border: none;
+      box-shadow: none;
+      background-position: 0 0;
+      transform: translate(0.4rem, 0.4rem);
 }
 
 /*=============================Banner=============================*/
@@ -105,6 +99,7 @@ ul.menu {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    /*overflow: hidden;*/
     width: 100%;
     height: 100vh;
     text-align: center;
@@ -123,6 +118,7 @@ ul.menu {
     bottom: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.2);
+    /*background-size: 100%;*/
 }
 
 .banner-text-item {
@@ -140,7 +136,7 @@ ul.menu {
 }
 
 .banner-heading h1 {
-    font-size: 60px;
+    font-size: 100px;
     font-weight: normal;
     color: #FDE02F;
     font-family: Satisfy;
@@ -149,21 +145,21 @@ ul.menu {
 .banner-text-item .form {
     flex: 1;
     display: flex;
-    flex-flow: column;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
-    width: 80%;
-    padding: 2% 4%;
+    width: 70%;
+    padding: 1% 2%;
 }
 
 .banner-text-item input,
 .banner-text-item .date,
 .banner-text-item .book {
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
+    padding: 15px;
+    margin-right: 10px;
+    font-size: 18px;
     font-family: Roboto;
     border-radius: 5px;
     outline: 0;
@@ -171,31 +167,37 @@ ul.menu {
 }
 
 .banner-text-item input {
-    width: 100%;
+    width: 50%;
+    flex: 2;
 }
 
-.banner-text-item .date,
+.banner-text-item .date {
+    width: 20%;
+    flex: 1;
+}
+
 .banner-text-item .book {
-    width: 100%;
+    width: 20%;
+    flex: 1;
 }
 
 .banner-text-item .book {
     text-decoration: none;
     color: #000;
     text-transform: uppercase;
-    padding: 10px;
+    padding: 15px;
     cursor: pointer;
     background-color: #FDE02F;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     font-family: "Barlow Condensed";
-    width: 100%;
+    width: 20%;
 }
 
 /*=============================Places===============================*/
 .places-text {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .places-text small {
@@ -207,14 +209,13 @@ ul.menu {
 
 .places-text h2 {
     font-family: Barlow Condensed;
-    font-size: 40px;
+    font-size: 55px;
     color: #191D34;
     letter-spacing: 1px;
 }
-
 .places-text2 {
     text-align: center;
-    margin: 20px 0;
+    margin: 100px;
 }
 
 .places-text2 small {
@@ -226,15 +227,25 @@ ul.menu {
 
 .places-text2 h2 {
     font-family: Barlow Condensed;
-    font-size: 40px;
+    font-size: 55px;
     color: #191D34;
     letter-spacing: 1px;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+.cards1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+    grid-gap: 10px;
     align-items: center;
     justify-items: center;
     text-align: center;
@@ -243,29 +254,31 @@ ul.menu {
 .card {
     border: 1px solid lightgray;
     box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    width: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 80%;
+    height: auto;
 }
 
 .card img {
     max-width: 100%;
-    height: auto;
-    width: 100%;
+    height: 400px;
+    width: 300px;
     border-radius: 8px;
     cursor: pointer;
 }
 
 .cards .text {
-    padding: 10px;
+    padding: 20px;
     font-family: Barlow Condensed;
-    line-height: 30px;
+    line-height: 50px;
 }
 
 .cards .card-box {
     display: flex;
     flex-flow: row;
     background-color: #FDE02F;
-    font-size: 16px;
+    font-size: 18px;
     font-family: Roboto;
     align-items: center;
     justify-content: center;
@@ -282,7 +295,7 @@ ul.menu {
 
 .cards .cost {
     color: #4CAFAD;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 /*------------Zoom in Photos--------------*/
@@ -300,10 +313,12 @@ ul.menu {
 }
 
 .img-card img {
+    -webkit-transition: 0.8s ease;
     transition: 0.6s ease;
 }
 
 .card:hover .zoom-img img {
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
 }
 
@@ -313,7 +328,7 @@ ul.menu {
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    padding: 30px;
+    padding: 150px;
 }
 
 .about-img {
@@ -321,13 +336,14 @@ ul.menu {
 }
 
 .about-img img {
-    max-width: 100%;
-    height: auto;
+    width: 500px;
+    height: 700px;
     box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
 .about-text {
     flex: 1;
+    /*width: 100px;*/
     display: flex;
     flex-flow: column wrap;
 }
@@ -336,6 +352,7 @@ ul.menu {
 .about-text p,
 .about-text input,
 .about-text a {
+    flex: 1;
     font-family: Roboto;
 }
 
@@ -345,10 +362,11 @@ ul.menu {
 }
 
 .about-text h2 {
+    flex: 1;
     font-family: Barlow Condensed;
-    font-size: 40px;
+    font-size: 60px;
     color: #191D34;
-    width: 100%;
+    width: 450px;
 }
 
 .about-text label {
@@ -360,10 +378,11 @@ ul.menu {
 }
 
 .about-text p {
+    width: 500px;
     line-height: 30px;
     color: #506172;
     font-weight: bolder;
-    padding: 20px 0;
+    padding: 50px 0;
 }
 
 .about-text a {
@@ -371,9 +390,10 @@ ul.menu {
     border: 2px solid #014B85;
     text-decoration: none;
     border-radius: 5px;
-    padding: 15px;
+    width: 180px;
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
     color: #014B85;
     font-weight: bolder;
     font-size: 14px;
@@ -422,59 +442,216 @@ ul.menu {
 
 .links ul {
     list-style-type: none;
-    text-align: center;
 }
 
 .links a {
     font-family: Barlow Condensed;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 23px;
     margin-bottom: 15px;
     color: white;
-    text-decoration: none;
+    text-decoration: no;
 }
+
 
 /*==========================Responsive=============================*/
 @media all and (max-width: 1172px) {
-    .nav-bar {
-        height: auto;
-        justify-content: space-between;
-        padding: 10px;
-    }
-
-    .logo {
-        font-size: 24px;
-        margin: 0;
-        color: #FDE02F;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    .menu.active {
-        display: block;
-    }
-
-    .menu li {
-        text-align: left;
-        margin: 0;
-        padding: 10px;
-    }
-}
-
-@media all and (max-width: 768px) {
     .banner-text-item .form {
-        width: 80%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
     }
+
 
     .banner-text-item .form input,
     .banner-text-item .form .date,
-    .banner-text-item .form .book {
+    .banner-text-item .form a {
+        flex: 1;
+        margin-bottom: 5px;
         font-size: 14px;
     }
 
-    .banner-text-item input {
+    .banner-text-item .form input {
+        width: 60%;
+    }
+
+    .banner-text-item .form .date {
+        width: 30%;
+    }
+
+    .banner-text-item .form .book {
+        width: 10%;
+        font-size: 14px;
+    }
+
+    .banner-heading h1 {
+        font-size: 60px;
+    }
+}
+
+@media all and (max-width: 1414px) {
+    .banner-text-item .form input {
+        width: 40%;
+    }
+
+    .banner-text-item .form .date {
+        width: 30%;
+    }
+
+    .banner-text-item .form .book {
+        width: 20%;
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 942px) {
+    .nav-bar {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
         width: 100%;
+        height: auto;
+        text-align: center;
+        position: static;
+    }
+
+    .logo {
+        flex: 1;
+        font-size: 30px;
+        margin: 10px auto;
+        font-family: Satisfy;
+        color: #FDE02F;
+    }
+
+    .nav-bar ul {
+        display: none;
+    }
+
+    .nav-bar ul li {
+        flex: 1;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+
+    .services {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .services .service-item {
+        flex: 1;
+        margin-bottom: -130px;
+        width: 400px;
+    }
+
+    .places-text {
+        margin-top: 200px;
+    }
+}
+
+@media all and (max-width: 928px) {
+    .banner .form input, a {
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 1173px) {
+    .banner .form {
+        background-color: transparent;
+    }
+}
+
+@media all and (max-width: 1194px) {
+    .places .card-box p {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 1086px) {
+    .places .cards .text {
+        line-height: 40px;
+    }
+
+    .cards .text .h2 {
+        font-size: 12px;
+    }
+
+    .cards .img-card img {
+        height: 260px;
+    }
+}
+
+@media all and (max-width: 974px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        grid-gap: 20px;
+    }
+
+    .card {
+        width: 300px;
+        height: 500px;
+        margin: auto;
+    }
+
+    .cards .text {
+        padding: 5px;
+        font-family: Barlow Condensed;
+    }
+}
+
+@media all and (max-width: 1334px) {
+    .about-img img {
+        width: 300px;
+        height: 500px;
+    }
+}
+
+@media all and (max-width: 1116px) {
+    .about {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-img {
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .about-text {
+        flex: 1;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-text h2{
+        font-size: 35px;
+    }
+
+    .about-img img {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media all and (max-width: 708px) {
+    .footer{
+        width: 100%;
+        height: 670px;
+        position: relative;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
     }
 }
